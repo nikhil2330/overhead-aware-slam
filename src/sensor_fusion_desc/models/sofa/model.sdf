@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="sofa">
+    <static>true</static>
+    <link name="body">
+      <!-- Four-block sofa collision: main body, two arms, and one backrest. -->
+      <collision name="body_collision">
+        <pose>0 0.02 0.23 0 0 0</pose>
+        <geometry><box><size>2.12 1.05 0.4</size></box></geometry>
+      </collision>
+      <collision name="left_arm_collision">
+        <pose>-1.17 0.02 0.35 0 0 0</pose>
+        <geometry><box><size>0.26 1 0.65</size></box></geometry>
+      </collision>
+      <collision name="right_arm_collision">
+        <pose>1.17 0.02 0.35 0 0 0</pose>
+        <geometry><box><size>0.26 1 0.65</size></box></geometry>
+      </collision>
+      <collision name="back_collision">
+        <pose>0 0.38 0.58 0 0 0</pose>
+        <geometry><box><size>1.96 0.3 0.6</size></box></geometry>
+      </collision>
+
+      <visual name="sofa_visual">
+        <pose>0 0.021 0.001 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://Sofa/meshes/Sofa.obj</uri>
+            <scale>1.46 1.00 1.00</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

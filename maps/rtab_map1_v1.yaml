@@ -1,0 +1,9 @@
+free_thresh: 0.25
+image: rtab_map1_v1.pgm
+negate: 0
+occupied_thresh: 0.65
+origin:
+- -6.527150630950928
+- -4.76874303817749
+- 0.0
+resolution: 0.05000000074505806

@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="bookshelf">
+    <static>true</static>
+    <link name="body">
+
+      <collision name="left_side_collision">
+        <pose>0 0.33 0.88 0 0 0</pose>
+        <geometry><box><size>0.48 0.05 1.78</size></box></geometry>
+      </collision>
+      <collision name="right_side_collision">
+        <pose>0 -0.33 0.88 0 0 0</pose>
+        <geometry><box><size>0.48 0.05 1.78</size></box></geometry>
+      </collision>
+      <collision name="back_collision">
+        <pose>-0.21 0 0.88 0 0 0</pose>
+        <geometry><box><size>0.05 0.68 1.78</size></box></geometry>
+      </collision>
+
+      <collision name="bottom_shelf_collision">
+        <pose>0.03 0 0.14 0 0 0</pose>
+        <geometry><box><size>0.44 0.68 0.05</size></box></geometry>
+      </collision>
+      <collision name="mid1_shelf_collision">
+        <pose>0.03 0 0.50 0 0 0</pose>
+        <geometry><box><size>0.44 0.68 0.05</size></box></geometry>
+      </collision>
+      <collision name="mid2_shelf_collision">
+        <pose>0.03 0 0.86 0 0 0</pose>
+        <geometry><box><size>0.44 0.68 0.05</size></box></geometry>
+      </collision>
+      <collision name="mid3_shelf_collision">
+        <pose>0.03 0 1.22 0 0 0</pose>
+        <geometry><box><size>0.44 0.68 0.05</size></box></geometry>
+      </collision>
+      <collision name="top_shelf_collision">
+        <pose>0.03 0 1.58 0 0 0</pose>
+        <geometry><box><size>0.44 0.68 0.05</size></box></geometry>
+      </collision>
+
+      <collision name="books_2_collision">
+        <pose>0.09 -0.03 0.66 0 0 0</pose>
+        <geometry><box><size>0.20 0.42 0.24</size></box></geometry>
+      </collision>
+      <collision name="books_3_collision">
+        <pose>0.09 0.02 1.02 0 0 0</pose>
+        <geometry><box><size>0.20 0.46 0.24</size></box></geometry>
+      </collision>
+      <collision name="books_4_collision">
+        <pose>0.09 -0.04 1.38 0 0 0</pose>
+        <geometry><box><size>0.20 0.44 0.22</size></box></geometry>
+      </collision>
+
+      <visual name="left_side_visual">
+        <pose>0 0.33 0.88 0 0 0</pose>
+        <geometry><box><size>0.48 0.05 1.78</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.jpg</albedo_map><normal_map>materials/textures/wood_normal.jpg</normal_map><roughness_map>materials/textures/wood_roughness.jpg</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+      <visual name="right_side_visual">
+        <pose>0 -0.33 0.88 0 0 0</pose>
+        <geometry><box><size>0.48 0.05 1.78</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.jpg</albedo_map><normal_map>materials/textures/wood_normal.jpg</normal_map><roughness_map>materials/textures/wood_roughness.jpg</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+      <visual name="back_visual">
+        <pose>-0.21 0 0.88 0 0 0</pose>
+        <geometry><box><size>0.05 0.68 1.78</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.jpg</albedo_map><normal_map>materials/textures/wood_normal.jpg</normal_map><roughness_map>materials/textures/wood_roughness.jpg</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+
+      <visual name="bottom_shelf_visual">
+        <pose>0.03 0 0.14 0 0 0</pose>
+        <geometry><box><size>0.44 0.68 0.05</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.jpg</albedo_map><normal_map>materials/textures/wood_normal.jpg</normal_map><roughness_map>materials/textures/wood_roughness.jpg</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+      <visual name="mid1_shelf_visual">
+        <pose>0.03 0 0.50 0 0 0</pose>
+        <geometry><box><size>0.44 0.68 0.05</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.jpg</albedo_map><normal_map>materials/textures/wood_normal.jpg</normal_map><roughness_map>materials/textures/wood_roughness.jpg</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+      <visual name="mid2_shelf_visual">
+        <pose>0.03 0 0.86 0 0 0</pose>
+        <geometry><box><size>0.44 0.68 0.05</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.jpg</albedo_map><normal_map>materials/textures/wood_normal.jpg</normal_map><roughness_map>materials/textures/wood_roughness.jpg</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+      <visual name="mid3_shelf_visual">
+        <pose>0.03 0 1.22 0 0 0</pose>
+        <geometry><box><size>0.44 0.68 0.05</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.jpg</albedo_map><normal_map>materials/textures/wood_normal.jpg</normal_map><roughness_map>materials/textures/wood_roughness.jpg</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+      <visual name="top_shelf_visual">
+        <pose>0.03 0 1.58 0 0 0</pose>
+        <geometry><box><size>0.44 0.68 0.05</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.jpg</albedo_map><normal_map>materials/textures/wood_normal.jpg</normal_map><roughness_map>materials/textures/wood_roughness.jpg</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+
+      <!-- simple books -->
+      <visual name="books_2">
+        <pose>0.09 -0.03 0.66 0 0 0</pose>
+        <geometry><box><size>0.20 0.42 0.24</size></box></geometry>
+        <material><ambient>0.45 0.18 0.18 1</ambient><diffuse>0.70 0.28 0.28 1</diffuse></material>
+      </visual>
+      <visual name="books_3">
+        <pose>0.09 0.02 1.02 0 0 0</pose>
+        <geometry><box><size>0.20 0.46 0.24</size></box></geometry>
+        <material><ambient>0.18 0.40 0.18 1</ambient><diffuse>0.28 0.62 0.28 1</diffuse></material>
+      </visual>
+      <visual name="books_4">
+        <pose>0.09 -0.04 1.38 0 0 0</pose>
+        <geometry><box><size>0.20 0.44 0.22</size></box></geometry>
+        <material><ambient>0.48 0.36 0.14 1</ambient><diffuse>0.74 0.56 0.22 1</diffuse></material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

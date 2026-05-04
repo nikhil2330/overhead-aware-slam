@@ -1,0 +1,101 @@
+icp_odometry:
+  ros__parameters:
+    use_sim_time: true
+    frame_id: base_footprint
+    odom_frame_id: rtabmap_odom
+    publish_tf: true
+    wait_for_transform: 0.3
+    approx_sync: true
+    topic_queue_size: 10
+    sync_queue_size: 10
+    qos: 1
+
+    # ICP params tuned for a 40-ring GPU lidar at 8 Hz in a house.
+    "Icp/PointToPlane": "true"
+    "Icp/VoxelSize": "0.05"
+    "Icp/MaxCorrespondenceDistance": "0.30"
+    "Icp/CorrespondenceRatio": "0.20"
+    "Icp/Iterations": "30"
+    "Icp/RangeMin": "0.25"
+    "Icp/RangeMax": "12.0"
+    "Odom/GuessMotion": "true"
+    "Odom/ResetCountdown": "0"
+    "Reg/Force3DoF": "true"
+
+rtabmap:
+  ros__parameters:
+    use_sim_time: true
+
+    # Input: 3-D point cloud only (no RGB-D, no 2-D scan).
+    subscribe_depth: false
+    subscribe_rgb: false
+    subscribe_rgbd: false
+    subscribe_stereo: false
+    subscribe_scan: false
+    subscribe_scan_cloud: true
+    subscribe_odom_info: false
+
+    frame_id: base_footprint
+    map_frame_id: map
+    odom_frame_id: odom
+    publish_tf: true
+
+    database_path: ~/.ros/rtabmap_3d_lidar.db
+    wait_for_transform: 0.3
+    approx_sync: true
+    topic_queue_size: 10
+    sync_queue_size: 10
+    qos_scan: 1
+    qos_odom: 1
+
+    # Memory
+    "Mem/IncrementalMemory": "true"
+    "Mem/InitWMWithAllNodes": "false"
+
+    # Registration / loop closure
+    "Reg/Strategy": "1"
+    "Reg/Force3DoF": "true"
+    "RGBD/CreateOccupancyGrid": "true"
+    "RGBD/NeighborLinkRefining": "true"
+    "RGBD/ProximityBySpace": "true"
+    "RGBD/ProximityMaxGraphDepth": "0"
+
+    # 2-D occupancy grid projected from 3-D cloud.
+    # Grid/3D=false projects everything between min/max obstacle height
+    # to 2-D, giving solid filled footprints for furniture.
+    "Grid/FromDepth": "false"
+    "Grid/3D": "false"
+    "Grid/Sensor": "0"
+    "Grid/CellSize": "0.05"
+    "Grid/RangeMin": "0.25"
+    "Grid/RangeMax": "12.0"
+    "Grid/MaxGroundHeight": "0.12"
+    "Grid/MinObstacleHeight": "0.10"
+    # Raise to 2.0 m so beds (~0.5 m), tables (~0.75 m),
+    # bookshelves (~1.8 m) all project to the 2-D map.
+    "Grid/MaxObstacleHeight": "2.00"
+    "Grid/NormalsSegmentation": "false"
+    # Ray tracing marks free space between the robot and hit points,
+    # filling under-table areas instead of leaving them unknown.
+    "Grid/RayTracing": "true"
+    # Exclude points within 20 cm of robot centre (prevents robot body hits).
+    "Grid/FootprintRadius": "0.20"
+
+rtabmap_viz:
+  ros__parameters:
+    use_sim_time: true
+    subscribe_depth: false
+    subscribe_rgb: false
+    subscribe_rgbd: false
+    subscribe_stereo: false
+    subscribe_scan: false
+    subscribe_scan_cloud: true
+    subscribe_odom_info: false
+    frame_id: base_footprint
+    odom_frame_id: odom
+    wait_for_transform: 0.3
+    approx_sync: true
+    topic_queue_size: 10
+    sync_queue_size: 10
+    qos_scan: 1
+    qos_odom: 1

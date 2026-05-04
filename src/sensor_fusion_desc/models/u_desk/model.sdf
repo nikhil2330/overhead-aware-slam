@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="u_desk">
+    <static>true</static>
+    <link name="body">
+
+      <collision name="top_collision">
+        <pose>0.04 0 0.73 0 0 0</pose>
+        <geometry><box><size>0.42 1.40 0.06</size></box></geometry>
+      </collision>
+      <visual name="top_visual">
+        <pose>0.04 0 0.73 0 0 0</pose>
+        <geometry><box><size>0.42 1.40 0.06</size></box></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>materials/textures/wood_albedo.jpg</albedo_map>
+              <normal_map>materials/textures/wood_normal.jpg</normal_map>
+              <roughness_map>materials/textures/wood_roughness.jpg</roughness_map>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <collision name="left_panel_collision">
+        <pose>0.04 0.67 0.35 0 0 0</pose>
+        <geometry><box><size>0.30 0.06 0.72</size></box></geometry>
+      </collision>
+      <collision name="right_panel_collision">
+        <pose>0.04 -0.67 0.35 0 0 0</pose>
+        <geometry><box><size>0.30 0.06 0.72</size></box></geometry>
+      </collision>
+      <collision name="back_panel_collision">
+        <pose>-0.14 0 0.35 0 0 0</pose>
+        <geometry><box><size>0.06 1.40 0.72</size></box></geometry>
+      </collision>
+
+      <visual name="left_panel_visual">
+        <pose>0.04 0.67 0.35 0 0 0</pose>
+        <geometry><box><size>0.30 0.06 0.72</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.jpg</albedo_map><normal_map>materials/textures/wood_normal.jpg</normal_map><roughness_map>materials/textures/wood_roughness.jpg</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+      <visual name="right_panel_visual">
+        <pose>0.04 -0.67 0.35 0 0 0</pose>
+        <geometry><box><size>0.30 0.06 0.72</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.jpg</albedo_map><normal_map>materials/textures/wood_normal.jpg</normal_map><roughness_map>materials/textures/wood_roughness.jpg</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+      <visual name="back_panel_visual">
+        <pose>-0.14 0 0.35 0 0 0</pose>
+        <geometry><box><size>0.06 1.40 0.72</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.jpg</albedo_map><normal_map>materials/textures/wood_normal.jpg</normal_map><roughness_map>materials/textures/wood_roughness.jpg</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

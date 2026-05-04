@@ -1,0 +1,12 @@
+build/
+install/
+log/
+/capstone
+/snapshots
+/images
+__pycache__/
+*.pyc
+
+.vscode/
+.idea/
+.DS_Store

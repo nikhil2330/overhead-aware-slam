@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="coffee_table">
+    <static>true</static>
+    <link name="body">
+
+      <collision name="top_collision">
+        <pose>0 0 0.42 0 0 0</pose>
+        <geometry><box><size>1.08 0.62 0.06</size></box></geometry>
+      </collision>
+      <visual name="top_visual">
+        <pose>0 0 0.42 0 0 0</pose>
+        <geometry><box><size>1.08 0.62 0.06</size></box></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>materials/textures/wood_albedo.png</albedo_map>
+              <normal_map>materials/textures/wood_normal.png</normal_map>
+              <roughness_map>materials/textures/wood_roughness.png</roughness_map>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <collision name="shelf_collision">
+        <pose>0 0 0.17 0 0 0</pose>
+        <geometry><box><size>0.90 0.46 0.035</size></box></geometry>
+      </collision>
+      <visual name="shelf_visual">
+        <pose>0 0 0.17 0 0 0</pose>
+        <geometry><box><size>0.90 0.46 0.035</size></box></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>materials/textures/wood_albedo.png</albedo_map>
+              <normal_map>materials/textures/wood_normal.png</normal_map>
+              <roughness_map>materials/textures/wood_roughness.png</roughness_map>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <collision name="leg_fl">
+        <pose>0.45 0.23 0.21 0 0 0</pose>
+        <geometry><box><size>0.055 0.055 0.43</size></box></geometry>
+      </collision>
+      <collision name="leg_fr">
+        <pose>0.45 -0.23 0.21 0 0 0</pose>
+        <geometry><box><size>0.055 0.055 0.43</size></box></geometry>
+      </collision>
+      <collision name="leg_bl">
+        <pose>-0.45 0.23 0.21 0 0 0</pose>
+        <geometry><box><size>0.055 0.055 0.43</size></box></geometry>
+      </collision>
+      <collision name="leg_br">
+        <pose>-0.45 -0.23 0.21 0 0 0</pose>
+        <geometry><box><size>0.055 0.055 0.43</size></box></geometry>
+      </collision>
+
+      <visual name="leg_fl_visual">
+        <pose>0.45 0.23 0.21 0 0 0</pose>
+        <geometry><box><size>0.055 0.055 0.43</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.png</albedo_map><normal_map>materials/textures/wood_normal.png</normal_map><roughness_map>materials/textures/wood_roughness.png</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+      <visual name="leg_fr_visual">
+        <pose>0.45 -0.23 0.21 0 0 0</pose>
+        <geometry><box><size>0.055 0.055 0.43</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.png</albedo_map><normal_map>materials/textures/wood_normal.png</normal_map><roughness_map>materials/textures/wood_roughness.png</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+      <visual name="leg_bl_visual">
+        <pose>-0.45 0.23 0.21 0 0 0</pose>
+        <geometry><box><size>0.055 0.055 0.43</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.png</albedo_map><normal_map>materials/textures/wood_normal.png</normal_map><roughness_map>materials/textures/wood_roughness.png</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+      <visual name="leg_br_visual">
+        <pose>-0.45 -0.23 0.21 0 0 0</pose>
+        <geometry><box><size>0.055 0.055 0.43</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.png</albedo_map><normal_map>materials/textures/wood_normal.png</normal_map><roughness_map>materials/textures/wood_roughness.png</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

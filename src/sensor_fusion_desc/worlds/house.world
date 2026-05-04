@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <world name="house.world">
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun</uri>
+    </include>
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground Plane</uri>
+    </include>
+    <include>
+      <uri>model://house</uri>
+      <name>house</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://table</uri>
+      <name>table</name>
+      <pose>1.7 0.0 0 0.0 0.0 0.0</pose>
+    </include>
+
+    <include>
+      <uri>model://obstacle1</uri>
+      <name>obstacle1</name>
+      <pose>-2.0 1.0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://chair</uri>
+      <name>chair1</name>
+      <pose>-2.5 -1.0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://chair</uri>
+      <name>chair2</name>
+      <pose>-0.8 1.6 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://chair</uri>
+      <name>chair3</name>
+      <pose>0.0 -1.0 0 0 0 0</pose>
+    </include>
+
+        <include>
+      <uri>model://chair</uri>
+      <name>chair4</name>
+      <pose> 1.7 -1.0 0 0 0 0</pose>
+    </include>
+
+
+
+
+  </world>
+</sdf>

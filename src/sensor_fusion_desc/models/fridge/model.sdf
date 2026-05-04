@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="fridge">
+    <static>true</static>
+    <link name="body">
+
+      <collision name="main_collision">
+        <pose>0 0 0.90 0 0 0</pose>
+        <geometry><box><size>0.80 0.74 1.82</size></box></geometry>
+      </collision>
+      <collision name="top_door_handle_collision">
+        <pose>0.41 -0.18 1.35 0 0 0</pose>
+        <geometry><box><size>0.03 0.04 0.42</size></box></geometry>
+      </collision>
+      <collision name="bottom_door_handle_collision">
+        <pose>0.41 -0.18 0.62 0 0 0</pose>
+        <geometry><box><size>0.03 0.04 0.42</size></box></geometry>
+      </collision>
+
+      <visual name="main_visual">
+        <pose>0 0 0.90 0 0 0</pose>
+        <geometry><box><size>0.80 0.74 1.82</size></box></geometry>
+        <material>
+          <ambient>0.72 0.72 0.74 1</ambient>
+          <diffuse>0.88 0.88 0.90 1</diffuse>
+          <specular>0.18 0.18 0.18 1</specular>
+        </material>
+      </visual>
+
+      <visual name="door_split">
+        <pose>0.39 0 1.08 0 0 0</pose>
+        <geometry><box><size>0.01 0.70 1.45</size></box></geometry>
+        <material><ambient>0.55 0.55 0.56 1</ambient><diffuse>0.68 0.68 0.70 1</diffuse></material>
+      </visual>
+
+      <visual name="top_door_handle">
+        <pose>0.41 -0.18 1.35 0 0 0</pose>
+        <geometry><box><size>0.03 0.04 0.42</size></box></geometry>
+        <material><ambient>0.25 0.25 0.27 1</ambient><diffuse>0.40 0.40 0.43 1</diffuse></material>
+      </visual>
+      <visual name="bottom_door_handle">
+        <pose>0.41 -0.18 0.62 0 0 0</pose>
+        <geometry><box><size>0.03 0.04 0.42</size></box></geometry>
+        <material><ambient>0.25 0.25 0.27 1</ambient><diffuse>0.40 0.40 0.43 1</diffuse></material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

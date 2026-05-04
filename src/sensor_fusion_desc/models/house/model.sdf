@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="house">
+    <static>true</static>
+    <link name="link">
+
+      <collision name="w">
+        <pose>-3.0 0.0 0.5 0 0 0</pose>
+        <geometry><box><size>0.1 4.0 2.0</size></box></geometry>
+      </collision>
+      <visual name="w_visual">
+        <pose>-3.0 0.0 0.5 0 0 0</pose>
+        <geometry><box><size>0.1 4.0 2.0</size></box></geometry>
+        <material>
+          <ambient>0.85 0.83 0.78 1</ambient>
+          <diffuse>0.92 0.90 0.85 1</diffuse>
+        </material>
+      </visual>
+
+      <collision name="e">
+        <pose>3.0 0.0 0.5 0 0 0</pose>
+        <geometry><box><size>0.1 4.0 2.0</size></box></geometry>
+      </collision>
+      <visual name="e_visual">
+        <pose>3.0 0.0 0.5 0 0 0</pose>
+        <geometry><box><size>0.1 4.0 2.0</size></box></geometry>
+        <material>
+          <ambient>0.85 0.83 0.78 1</ambient>
+          <diffuse>0.92 0.90 0.85 1</diffuse>
+        </material>
+      </visual>
+
+      <collision name="n">
+        <pose>0.0 2.0 0.5 0 0 0</pose>
+        <geometry><box><size>6.0 0.1 2.0</size></box></geometry>
+      </collision>
+      <visual name="n_visual">
+        <pose>0.0 2.0 0.5 0 0 0</pose>
+        <geometry><box><size>6.0 0.1 2.0</size></box></geometry>
+        <material>
+          <ambient>0.85 0.83 0.78 1</ambient>
+          <diffuse>0.92 0.90 0.85 1</diffuse>
+        </material>
+      </visual>
+
+      <collision name="s">
+        <pose>0.0 -2.0 0.5 0 0 0</pose>
+        <geometry><box><size>6.0 0.1 2.0</size></box></geometry>
+      </collision>
+      <visual name="s_visual">
+        <pose>0.0 -2.0 0.5 0 0 0</pose>
+        <geometry><box><size>6.0 0.1 2.0</size></box></geometry>
+        <material>
+          <ambient>0.85 0.83 0.78 1</ambient>
+          <diffuse>0.92 0.90 0.85 1</diffuse>
+        </material>
+      </visual>
+
+      <collision name="small_e">
+        <pose>0.6 1.0 0.5 0 0 0</pose>
+        <geometry><box><size>0.1 2.0 2.0</size></box></geometry>
+      </collision>
+      <visual name="small_e_visual">
+        <pose>0.6 1.0 0.5 0 0 0</pose>
+        <geometry><box><size>0.1 2.0 2.0</size></box></geometry>
+        <material>
+          <ambient>0.85 0.83 0.78 1</ambient>
+          <diffuse>0.92 0.90 0.85 1</diffuse>
+        </material>
+      </visual>
+
+      <collision name="door1">
+        <pose>-2.325 0.0 0.5 0 0 0</pose>
+        <geometry><box><size>1.35 0.1 2.0</size></box></geometry>
+      </collision>
+      <visual name="door1_visual">
+        <pose>-2.325 0.0 0.5 0 0 0</pose>
+        <geometry><box><size>1.35 0.1 2.0</size></box></geometry>
+        <material>
+          <ambient>0.85 0.83 0.78 1</ambient>
+          <diffuse>0.92 0.90 0.85 1</diffuse>
+        </material>
+      </visual>
+
+      <collision name="door2">
+        <pose>-0.525 0.0 0.5 0 0 0</pose>
+        <geometry><box><size>1.1 0.1 2.0</size></box></geometry>
+      </collision>
+      <visual name="door2_visual">
+        <pose>-0.525 0.0 0.5 0 0 0</pose>
+        <geometry><box><size>1.1 0.1 2.0</size></box></geometry>
+        <material>
+          <ambient>0.85 0.83 0.78 1</ambient>
+          <diffuse>0.92 0.90 0.85 1</diffuse>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

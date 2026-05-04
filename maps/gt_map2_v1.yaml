@@ -1,0 +1,7 @@
+image: gt_map2_v1.pgm
+mode: trinary
+resolution: 0.050
+origin: [-5.900, -4.500, 0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

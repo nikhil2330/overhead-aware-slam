@@ -1,0 +1,274 @@
+Panels:
+  - Class: rviz_common/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /Status1
+      Splitter Ratio: 0.5
+    Tree Height: 600
+  - Class: rviz_common/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz_common/Time
+    Experimental: false
+    Name: Time
+    SyncMode: 0
+    SyncSource: ""
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz_default_plugins/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Name: Grid
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+
+    # ── 3-D point cloud from the lidar ─────────────────────────────────
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 2
+        Min Value: 0
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz_default_plugins/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: AxisColor
+      Decay Time: 0
+      Enabled: true
+      Name: 3D Lidar Points
+      Size (Pixels): 2
+      Size (m): 0.03
+      Style: Points
+      Topic:
+        Depth: 1
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /lidar/points
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+
+    # ── 2-D laser scan extracted from the 3-D lidar ────────────────────
+    - Alpha: 1
+      Class: rviz_default_plugins/LaserScan
+      Color: 255; 100; 0
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: true
+      Name: 2D Scan
+      Size (Pixels): 3
+      Size (m): 0.01
+      Style: Flat Squares
+      Topic:
+        Depth: 1
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /scan
+      Use Fixed Frame: true
+      Value: true
+
+    # ── SLAM Toolbox / RTAB-Map 2-D occupancy grid (/map) ─────────────
+    # Raw map from the SLAM back-end.  With SLAM Toolbox this is a
+    # standard 2-D scan-match map.  With RTAB-Map (Grid/3D=false) every
+    # 3-D lidar point between 0.10 m and 2.00 m is projected to the 2-D
+    # plane, so beds, tables and bookshelves appear as solid obstacles.
+    - Alpha: 0.55
+      Binary representation: false
+      Binary threshold: 100
+      Class: rviz_default_plugins/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: SLAM/RTAB-Map 2D Grid (raw)
+      Topic:
+        Depth: 5
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map
+      Update Topic:
+        Depth: 5
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map_updates
+      Use Timestamp: false
+      Value: true
+
+    # ── Morphologically-closed /map (/map_filled) ──────────────────────
+    # map_filler applies binary_closing (0.65 m kernel) to /map.
+    # Fills any remaining unknown holes inside occupied perimeters.
+    - Alpha: 0.7
+      Binary representation: false
+      Binary threshold: 100
+      Class: rviz_default_plugins/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: SLAM/RTAB-Map 2D Grid (filled)
+      Topic:
+        Depth: 5
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map_filled
+      Update Topic:
+        Depth: 5
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map_filled_updates
+      Use Timestamp: false
+      Value: true
+
+    # ── RTAB-Map assembled 3-D point cloud ─────────────────────────────
+    # /rtabmap/cloud_map is the full 3-D map RTAB-Map has built so far.
+    # Only populated when using lidar3d_rtabmap.launch.py.
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 2
+        Min Value: 0
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz_default_plugins/PointCloud2
+      Color: 0; 200; 100
+      Color Transformer: AxisColor
+      Decay Time: 0
+      Enabled: true
+      Name: RTAB-Map 3D Cloud
+      Size (Pixels): 2
+      Size (m): 0.03
+      Style: Points
+      Topic:
+        Depth: 1
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /rtabmap/cloud_map
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+
+    # ── Our lidar-accumulation 2-D map (/pointcloud_occupancy_2d) ──────
+    # NOT from RTAB-Map / SLAM Toolbox.  This is our own node
+    # (pointcloud_occupancy) that accumulates ALL 3-D lidar hits
+    # permanently (decay_seconds=0) and applies morphological closing so
+    # full furniture footprints (bed, bookshelf, table) are filled in.
+    # Save this map for comparison:
+    #   ros2 launch sensor_fusion_run save_map.launch.py \
+    #       map_topic:=/pointcloud_occupancy_2d output:=~/occ_map \
+    #       transient:=false
+    - Alpha: 0.85
+      Binary representation: false
+      Binary threshold: 100
+      Class: rviz_default_plugins/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: Lidar Accumulation Map (our node, filled+permanent)
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /pointcloud_occupancy_2d
+      Update Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /pointcloud_occupancy_2d_updates
+      Use Timestamp: false
+      Value: true
+
+    # ── 3-D voxel markers (our node) ───────────────────────────────────
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: false
+      Name: Lidar Voxels 3D (our node)
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /pointcloud_occupancy_3d
+      Value: false
+
+    # ── TF frames ──────────────────────────────────────────────────────
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Frame Timeout: 15
+      Marker Scale: 0.8
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Update Interval: 0
+      Value: true
+
+  Enabled: true
+  Global Options:
+    Background Color: 40; 40; 40
+    Fixed Frame: map
+    Frame Rate: 15
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+      Hide Inactive Objects: true
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/PublishPoint
+      Single click: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /clicked_point
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 10.0
+      Enable Stereo Rendering:
+        Value: false
+      Focal Point:
+        X: 1.2
+        Y: -1.0
+        Z: 0.0
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 1.57
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 0.0
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 900
+  Hide Left Dock: false
+  Hide Right Dock: true
+  Width: 1400
+  X: 0
+  Y: 0

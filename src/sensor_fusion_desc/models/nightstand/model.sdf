@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="nightstand">
+    <static>true</static>
+    <link name="body">
+
+      <collision name="body_collision">
+        <pose>0 0 0.28 0 0 0</pose>
+        <geometry><box><size>0.54 0.46 0.58</size></box></geometry>
+      </collision>
+      <collision name="drawer_front_collision">
+        <pose>0.26 0 0.30 0 0 0</pose>
+        <geometry><box><size>0.03 0.38 0.22</size></box></geometry>
+      </collision>
+      <collision name="open_shelf_collision">
+        <pose>0.22 0 0.12 0 0 0</pose>
+        <geometry><box><size>0.02 0.34 0.12</size></box></geometry>
+      </collision>
+      <collision name="lamp_base_collision">
+        <pose>-0.02 0 0.61 0 0 0</pose>
+        <geometry><box><size>0.12 0.12 0.03</size></box></geometry>
+      </collision>
+      <collision name="lamp_stem_collision">
+        <pose>-0.02 0 0.76 0 0 0</pose>
+        <geometry><box><size>0.03 0.03 0.26</size></box></geometry>
+      </collision>
+      <collision name="lamp_shade_collision">
+        <pose>-0.02 0 0.92 0 0 0</pose>
+        <geometry><box><size>0.18 0.18 0.16</size></box></geometry>
+      </collision>
+      <visual name="body_visual">
+        <pose>0 0 0.28 0 0 0</pose>
+        <geometry><box><size>0.54 0.46 0.58</size></box></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>materials/textures/wood_albedo.jpg</albedo_map>
+              <normal_map>materials/textures/wood_normal.jpg</normal_map>
+              <roughness_map>materials/textures/wood_roughness.jpg</roughness_map>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="drawer_front">
+        <pose>0.26 0 0.30 0 0 0</pose>
+        <geometry><box><size>0.03 0.38 0.22</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.jpg</albedo_map><normal_map>materials/textures/wood_normal.jpg</normal_map><roughness_map>materials/textures/wood_roughness.jpg</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+      <visual name="open_shelf">
+        <pose>0.22 0 0.12 0 0 0</pose>
+        <geometry><box><size>0.02 0.34 0.12</size></box></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.05 0.05 0.05 1</specular><pbr><metal><albedo_map>materials/textures/wood_albedo.jpg</albedo_map><normal_map>materials/textures/wood_normal.jpg</normal_map><roughness_map>materials/textures/wood_roughness.jpg</roughness_map><metalness>0.0</metalness></metal></pbr></material>
+      </visual>
+
+      <visual name="lamp_base">
+        <pose>-0.02 0 0.61 0 0 0</pose>
+        <geometry><box><size>0.12 0.12 0.03</size></box></geometry>
+        <material><ambient>0.72 0.72 0.73 1</ambient><diffuse>0.88 0.88 0.90 1</diffuse></material>
+      </visual>
+      <visual name="lamp_stem">
+        <pose>-0.02 0 0.76 0 0 0</pose>
+        <geometry><box><size>0.03 0.03 0.26</size></box></geometry>
+        <material><ambient>0.62 0.62 0.63 1</ambient><diffuse>0.78 0.78 0.80 1</diffuse></material>
+      </visual>
+      <visual name="lamp_shade">
+        <pose>-0.02 0 0.92 0 0 0</pose>
+        <geometry><box><size>0.18 0.18 0.16</size></box></geometry>
+        <material><ambient>0.88 0.84 0.76 1</ambient><diffuse>0.96 0.93 0.86 1</diffuse></material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

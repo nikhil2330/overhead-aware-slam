@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.6">
+  <model name="VisitorChair">
+   <static>true</static>
+    <link name="body">
+      <pose>0 0 0 0 0 0</pose>
+
+      <collision name="seat_collision">
+        <pose>0 -0.04 0.445 0 0 0</pose>
+        <geometry><box><size>0.58 0.50 0.08</size></box></geometry>
+      </collision>
+      <collision name="back_collision">
+        <pose>0 0.29 0.86 -0.19 0 0</pose>
+        <geometry><box><size>0.52 0.05 0.60</size></box></geometry>
+      </collision>
+      <collision name="arm_left_collision">
+        <pose>-0.310 -0.015 0.735 1.5708 0 0</pose>
+        <geometry><cylinder><radius>0.018</radius><length>0.56</length></cylinder></geometry>
+      </collision>
+      <collision name="arm_right_collision">
+        <pose>0.310 -0.015 0.735 1.5708 0 0</pose>
+        <geometry><cylinder><radius>0.018</radius><length>0.56</length></cylinder></geometry>
+      </collision>
+      <collision name="leg_fl_collision">
+        <pose>0.310 -0.190 0.36 0 0 0</pose>
+        <geometry><cylinder><radius>0.02</radius><length>0.72</length></cylinder></geometry>
+      </collision>
+      <collision name="leg_fr_collision">
+        <pose>-0.310 -0.190 0.36 0 0 0</pose>
+        <geometry><cylinder><radius>0.02</radius><length>0.72</length></cylinder></geometry>
+      </collision>
+      <collision name="leg_bl_collision">
+        <pose>0.310 0.172 0.36 0 0 0</pose>
+        <geometry><cylinder><radius>0.02</radius><length>0.72</length></cylinder></geometry>
+      </collision>
+      <collision name="leg_br_collision">
+        <pose>-0.310 0.172 0.36 0 0 0</pose>
+        <geometry><cylinder><radius>0.02</radius><length>0.72</length></cylinder></geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://VisitorChair/meshes/VisitorChair.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

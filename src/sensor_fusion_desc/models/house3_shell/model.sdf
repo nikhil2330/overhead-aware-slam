@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="house3_shell">
+    <static>true</static>
+    <link name="link">
+
+      <!-- True L-shaped house: south bedroom/living wing plus northwest kitchen wing. -->
+      <visual name="foundation_south_wing_visual">
+        <pose>0.00 -1.75 -0.055 0 0 0</pose>
+        <geometry><box><size>11.70 5.00 0.08</size></box></geometry>
+        <material><ambient>0.34 0.36 0.35 1</ambient><diffuse>0.45 0.47 0.46 1</diffuse></material>
+      </visual>
+      <collision name="foundation_south_wing_collision">
+        <pose>0.00 -1.75 -0.055 0 0 0</pose>
+        <geometry><box><size>11.70 5.00 0.08</size></box></geometry>
+      </collision>
+      <visual name="foundation_north_wing_visual">
+        <pose>-3.175 2.45 -0.055 0 0 0</pose>
+        <geometry><box><size>5.35 3.70 0.08</size></box></geometry>
+        <material><ambient>0.34 0.36 0.35 1</ambient><diffuse>0.45 0.47 0.46 1</diffuse></material>
+      </visual>
+      <collision name="foundation_north_wing_collision">
+        <pose>-3.175 2.45 -0.055 0 0 0</pose>
+        <geometry><box><size>5.35 3.70 0.08</size></box></geometry>
+      </collision>
+
+      <visual name="floor_south_wing_visual">
+        <pose>0.00 -1.75 -0.006 0 0 0</pose>
+        <geometry><box><size>11.20 4.90 0.012</size></box></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>materials/textures/wood_albedo.jpg</albedo_map>
+              <normal_map>materials/textures/wood_normal.jpg</normal_map>
+              <roughness_map>materials/textures/wood_roughness.jpg</roughness_map>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <collision name="floor_south_wing_collision">
+        <pose>0.00 -1.75 -0.006 0 0 0</pose>
+        <geometry><box><size>11.20 4.90 0.012</size></box></geometry>
+      </collision>
+      <visual name="floor_north_wing_visual">
+        <pose>-3.175 2.45 -0.005 0 0 0</pose>
+        <geometry><box><size>5.25 3.50 0.012</size></box></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>materials/textures/wood_albedo.jpg</albedo_map>
+              <normal_map>materials/textures/wood_normal.jpg</normal_map>
+              <roughness_map>materials/textures/wood_roughness.jpg</roughness_map>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <collision name="floor_north_wing_collision">
+        <pose>-3.175 2.45 -0.005 0 0 0</pose>
+        <geometry><box><size>5.25 3.50 0.012</size></box></geometry>
+      </collision>
+
+      <!-- Exterior L-shaped boundary. -->
+      <collision name="wall_west_full">
+        <pose>-5.60 0.0 1.30 0 0 0</pose>
+        <geometry><box><size>0.14 8.40 2.60</size></box></geometry>
+      </collision>
+      <visual name="wall_west_full_visual">
+        <pose>-5.60 0.0 1.30 0 0 0</pose>
+        <geometry><box><size>0.14 8.40 2.60</size></box></geometry>
+        <material><ambient>0.80 0.81 0.77 1</ambient><diffuse>0.93 0.92 0.86 1</diffuse></material>
+      </visual>
+      <collision name="wall_south_left">
+        <pose>-3.25 -4.20 1.30 0 0 0</pose>
+        <geometry><box><size>4.70 0.14 2.60</size></box></geometry>
+      </collision>
+      <visual name="wall_south_left_visual">
+        <pose>-3.25 -4.20 1.30 0 0 0</pose>
+        <geometry><box><size>4.70 0.14 2.60</size></box></geometry>
+        <material><ambient>0.80 0.81 0.77 1</ambient><diffuse>0.93 0.92 0.86 1</diffuse></material>
+      </visual>
+      <collision name="wall_south_right">
+        <pose>3.25 -4.20 1.30 0 0 0</pose>
+        <geometry><box><size>4.70 0.14 2.60</size></box></geometry>
+      </collision>
+      <visual name="wall_south_right_visual">
+        <pose>3.25 -4.20 1.30 0 0 0</pose>
+        <geometry><box><size>4.70 0.14 2.60</size></box></geometry>
+        <material><ambient>0.80 0.81 0.77 1</ambient><diffuse>0.93 0.92 0.86 1</diffuse></material>
+      </visual>
+      <collision name="front_entry_closure">
+        <pose>0.00 -4.20 1.30 0 0 0</pose>
+        <geometry><box><size>1.80 0.14 2.60</size></box></geometry>
+      </collision>
+      <visual name="front_entry_closure_visual">
+        <pose>0.00 -4.20 1.30 0 0 0</pose>
+        <geometry><box><size>1.80 0.14 2.60</size></box></geometry>
+        <material><ambient>0.80 0.81 0.77 1</ambient><diffuse>0.93 0.92 0.86 1</diffuse></material>
+      </visual>
+      <collision name="wall_east_south_wing">
+        <pose>5.60 -1.75 1.30 0 0 0</pose>
+        <geometry><box><size>0.14 4.90 2.60</size></box></geometry>
+      </collision>
+      <visual name="wall_east_south_wing_visual">
+        <pose>5.60 -1.75 1.30 0 0 0</pose>
+        <geometry><box><size>0.14 4.90 2.60</size></box></geometry>
+        <material><ambient>0.80 0.81 0.77 1</ambient><diffuse>0.93 0.92 0.86 1</diffuse></material>
+      </visual>
+      <collision name="wall_inner_north_south_wing">
+        <pose>2.525 0.70 1.30 0 0 0</pose>
+        <geometry><box><size>6.15 0.14 2.60</size></box></geometry>
+      </collision>
+      <visual name="wall_inner_north_south_wing_visual">
+        <pose>2.525 0.70 1.30 0 0 0</pose>
+        <geometry><box><size>6.15 0.14 2.60</size></box></geometry>
+        <material><ambient>0.80 0.81 0.77 1</ambient><diffuse>0.93 0.92 0.86 1</diffuse></material>
+      </visual>
+      <collision name="wall_inner_east_north_wing">
+        <pose>-0.55 2.45 1.30 0 0 0</pose>
+        <geometry><box><size>0.14 3.50 2.60</size></box></geometry>
+      </collision>
+      <visual name="wall_inner_east_north_wing_visual">
+        <pose>-0.55 2.45 1.30 0 0 0</pose>
+        <geometry><box><size>0.14 3.50 2.60</size></box></geometry>
+        <material><ambient>0.80 0.81 0.77 1</ambient><diffuse>0.93 0.92 0.86 1</diffuse></material>
+      </visual>
+      <collision name="wall_north_wing">
+        <pose>-3.075 4.20 1.30 0 0 0</pose>
+        <geometry><box><size>5.05 0.14 2.60</size></box></geometry>
+      </collision>
+      <visual name="wall_north_wing_visual">
+        <pose>-3.075 4.20 1.30 0 0 0</pose>
+        <geometry><box><size>5.05 0.14 2.60</size></box></geometry>
+        <material><ambient>0.80 0.81 0.77 1</ambient><diffuse>0.93 0.92 0.86 1</diffuse></material>
+      </visual>
+
+      <!-- Interior walls: bedroom split and living opening. -->
+      <collision name="bedroom_east_wall_south">
+        <pose>-2.45 -3.70 1.30 0 0 0</pose>
+        <geometry><box><size>0.12 1.00 2.60</size></box></geometry>
+      </collision>
+      <visual name="bedroom_east_wall_south_visual">
+        <pose>-2.45 -3.70 1.30 0 0 0</pose>
+        <geometry><box><size>0.12 1.00 2.60</size></box></geometry>
+        <material><ambient>0.80 0.81 0.77 1</ambient><diffuse>0.93 0.92 0.86 1</diffuse></material>
+      </visual>
+      <collision name="bedroom_east_wall_north">
+        <pose>-2.45 -1.55 1.30 0 0 0</pose>
+        <geometry><box><size>0.12 0.60 2.60</size></box></geometry>
+      </collision>
+      <visual name="bedroom_east_wall_north_visual">
+        <pose>-2.45 -1.55 1.30 0 0 0</pose>
+        <geometry><box><size>0.12 0.60 2.60</size></box></geometry>
+        <material><ambient>0.80 0.81 0.77 1</ambient><diffuse>0.93 0.92 0.86 1</diffuse></material>
+      </visual>
+      <collision name="bedroom_north_wall">
+        <pose>-4.025 -1.25 1.30 0 0 0</pose>
+        <geometry><box><size>3.15 0.12 2.60</size></box></geometry>
+      </collision>
+      <visual name="bedroom_north_wall_visual">
+        <pose>-4.025 -1.25 1.30 0 0 0</pose>
+        <geometry><box><size>3.15 0.12 2.60</size></box></geometry>
+        <material><ambient>0.80 0.81 0.77 1</ambient><diffuse>0.93 0.92 0.86 1</diffuse></material>
+      </visual>
+
+      <collision name="living_west_wall_south">
+        <pose>1.65 -3.65 1.30 0 0 0</pose>
+        <geometry><box><size>0.12 1.10 2.60</size></box></geometry>
+      </collision>
+      <visual name="living_west_wall_south_visual">
+        <pose>1.65 -3.65 1.30 0 0 0</pose>
+        <geometry><box><size>0.12 1.10 2.60</size></box></geometry>
+        <material><ambient>0.80 0.81 0.77 1</ambient><diffuse>0.93 0.92 0.86 1</diffuse></material>
+      </visual>
+
+      <!-- Low thresholds show doors without blocking the robot or lidar. -->
+      <visual name="bedroom_threshold">
+        <pose>-2.44 -2.47 0.035 0 0 1.5708</pose>
+        <geometry><box><size>1.08 0.08 0.04</size></box></geometry>
+        <material><ambient>0.18 0.16 0.14 1</ambient><diffuse>0.30 0.26 0.21 1</diffuse></material>
+      </visual>
+      <visual name="living_threshold">
+        <pose>1.64 -2.43 0.035 0 0 1.5708</pose>
+        <geometry><box><size>1.34 0.08 0.04</size></box></geometry>
+        <material><ambient>0.18 0.16 0.14 1</ambient><diffuse>0.30 0.26 0.21 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+</sdf>

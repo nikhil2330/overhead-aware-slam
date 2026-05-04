@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="dining_chair_v2">
+    <static>true</static>
+    <link name="body">
+      <collision name="seat_collision">
+        <pose>0.045 0.002 0.37 0 0 0</pose>
+        <geometry><box><size>0.40 0.35 0.08</size></box></geometry>
+      </collision>
+      <collision name="back_collision">
+        <pose>0.045 0.21 0.74 0 0 0</pose>
+        <geometry><box><size>0.40 0.05 0.52</size></box></geometry>
+      </collision>
+      <collision name="support_collision">
+        <pose>0.045 0.002 0.19 0 0 0</pose>
+        <geometry><box><size>0.22 0.22 0.36</size></box></geometry>
+      </collision>
+
+      <visual name="chair_visual">
+        <pose>0.045 0.002 -0.001 0 0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://VisitorChair/meshes/VisitorChair.obj</uri>
+            <scale>0.78 0.70 0.84</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

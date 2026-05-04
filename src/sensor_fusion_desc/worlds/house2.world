@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <world name="house2">
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun</uri>
+    </include>
+
+    <gravity>0 0 -9.8</gravity>
+
+    <light name="living_room_light" type="point">
+      <cast_shadows>true</cast_shadows>
+      <pose>-3.40 2.20 2.35 0 0 0</pose>
+      <diffuse>1.0 0.92 0.82 1</diffuse>
+      <specular>0.18 0.16 0.14 1</specular>
+      <attenuation>
+        <range>8.0</range>
+        <constant>0.6</constant>
+        <linear>0.05</linear>
+        <quadratic>0.01</quadratic>
+      </attenuation>
+    </light>
+
+    <light name="kitchen_light" type="point">
+      <cast_shadows>true</cast_shadows>
+      <pose>3.15 2.20 2.35 0 0 0</pose>
+      <diffuse>1.0 0.94 0.86 1</diffuse>
+      <specular>0.18 0.16 0.14 1</specular>
+      <attenuation>
+        <range>8.0</range>
+        <constant>0.58</constant>
+        <linear>0.05</linear>
+        <quadratic>0.01</quadratic>
+      </attenuation>
+    </light>
+
+    <light name="office_light" type="point">
+      <cast_shadows>true</cast_shadows>
+      <pose>-3.60 -2.00 2.35 0 0 0</pose>
+      <diffuse>0.96 0.97 1.0 1</diffuse>
+      <specular>0.16 0.16 0.18 1</specular>
+      <attenuation>
+        <range>8.0</range>
+        <constant>0.62</constant>
+        <linear>0.05</linear>
+        <quadratic>0.012</quadratic>
+      </attenuation>
+    </light>
+
+    <light name="bedroom_light" type="point">
+      <cast_shadows>true</cast_shadows>
+      <pose>3.60 -2.30 2.30 0 0 0</pose>
+      <diffuse>0.98 0.92 0.84 1</diffuse>
+      <specular>0.18 0.16 0.14 1</specular>
+      <attenuation>
+        <range>7.0</range>
+        <constant>0.64</constant>
+        <linear>0.05</linear>
+        <quadratic>0.014</quadratic>
+      </attenuation>
+    </light>
+
+    <include>
+      <uri>model://house_shell</uri>
+      <name>house_shell</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <!-- living room -->
+    <include>
+      <uri>model://rug</uri>
+      <name>living_rug</name>
+      <pose>-3.55 2.10 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://sofa</uri>
+      <name>sofa_main</name>
+      <pose>-3.40 3.35 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://coffee_table</uri>
+      <name>coffee_table_main</name>
+      <pose>-3.60 1.95 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://tv_stand</uri>
+      <name>tv_stand_main</name>
+      <pose>-3.25 0.45 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bookshelf</uri>
+      <name>bookshelf_living</name>
+      <pose>-5.64 0.05 0 0 0 1.57</pose>
+    </include>
+
+    <include>
+      <uri>model://floor_lamp</uri>
+      <name>living_lamp</name>
+      <pose>-1.10 3.45 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://plant</uri>
+      <name>living_plant</name>
+      <pose>-5.58 3.62 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://accent_chair</uri>
+      <name>living_side_chair</name>
+      <pose>-2.05 2.10 0 0 0 3.14159</pose>
+    </include>
+
+    <!-- kitchen / dining -->
+    <include>
+      <uri>model://kitchen_counter</uri>
+      <name>kitchen_counter_main</name>
+      <pose>3.10 3.82 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://fridge</uri>
+      <name>fridge_main</name>
+      <pose>5.55 3.75 0 0 0 4.71239</pose>
+    </include>
+
+    <include>
+      <uri>model://table</uri>
+      <name>dining_table</name>
+      <pose>3.20 1.30 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://Dining Chair</uri>
+      <name>dining_chair_1</name>
+      <pose>3.20 2.39 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://Dining Chair</uri>
+      <name>dining_chair_2</name>
+      <pose>3.20 0.18 0 0 0 3.14159</pose>
+    </include>
+
+    <include>
+      <uri>model://Dining Chair</uri>
+      <name>dining_chair_3</name>
+      <pose>1.95 1.30 0 0 0 1.57</pose>
+    </include>
+
+    <include>
+      <uri>model://Dining Chair</uri>
+      <name>dining_chair_4</name>
+      <pose>4.45 1.30 0 0 0 4.71239</pose>
+    </include>
+
+    <include>
+      <uri>model://small_table</uri>
+      <name>kitchen_side_table</name>
+      <pose>0.95 2.85 0 0 0 1.57</pose>
+    </include>
+
+    <!-- office -->
+    <include>
+      <uri>model://desk</uri>
+      <name>desk_main</name>
+      <pose>-3.95 -0.58 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://office_chair</uri>
+      <name>office_chair_main</name>
+      <pose>-4.8 -1.55 0 0 0 0.8</pose>
+    </include>
+
+    <include>
+      <uri>model://round_table</uri>
+      <name>meeting_table</name>
+      <pose>-2.45 -3.10 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://VisitorChair</uri>
+      <name>office_chair_meeting_1</name>
+      <pose>-3.55 -3.10 0 0 0 1.57</pose>
+    </include>
+
+    <include>
+      <uri>model://office_chair</uri>
+      <name>office_chair_meeting_2</name>
+      <pose>-1.55 -3.10 0 0 0 3.14159</pose>
+    </include>
+
+    <include>
+      <uri>model://bookshelf</uri>
+      <name>bookshelf_office</name>
+      <pose>-0.62 -1.10 0 0 0 3.14159</pose>
+    </include>
+
+    <include>
+      <uri>model://u_desk</uri>
+      <name>desk_secondary</name>
+      <pose>-5.6 -3.4 0 0 0 0</pose>
+    </include>
+
+    <!-- bedroom -->
+    <include>
+      <uri>model://rug</uri>
+      <name>bedroom_rug</name>
+      <pose>2.90 -2.55 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bed</uri>
+      <name>bed_main</name>
+      <pose>4.55 -2.45 0 0 0 3.14159</pose>
+    </include>
+
+    <include>
+      <uri>model://nightstand</uri>
+      <name>nightstand_left</name>
+      <pose>5.60 -1.10 0 0 0 3.14159</pose>
+    </include>
+
+    <include>
+      <uri>model://nightstand</uri>
+      <name>nightstand_right</name>
+      <pose>5.60 -3.80 0 0 0 3.14159</pose>
+    </include>
+
+    <include>
+      <uri>model://dresser</uri>
+      <name>dresser_main</name>
+      <pose>-0.04 -3.20 0 0 0 1.57</pose>
+    </include>
+
+    <include>
+      <uri>model://plant</uri>
+      <name>bedroom_plant</name>
+      <pose>0.00 -0.75 0 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>

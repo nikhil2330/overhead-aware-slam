@@ -1,0 +1,15 @@
+object_location:
+  ros__parameters:
+    profile_classes: "chair,table"
+
+    default_profile.s_value: 0.60
+    default_profile.l_value: 0.75
+    default_profile.size_range: 0.30
+
+    class_profiles.chair.s_value: 0.56
+    class_profiles.chair.l_value: 0.60
+    class_profiles.chair.size_range: 0.25
+
+    class_profiles.table.s_value: 0.90
+    class_profiles.table.l_value: 1.35
+    class_profiles.table.size_range: 0.35

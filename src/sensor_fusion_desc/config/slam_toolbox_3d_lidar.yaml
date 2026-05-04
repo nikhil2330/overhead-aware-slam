@@ -1,0 +1,52 @@
+slam_toolbox:
+  ros__parameters:
+    use_sim_time: true
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_footprint
+    scan_topic: /scan
+
+    mode: mapping
+
+    resolution: 0.05
+    max_laser_range: 10.0
+
+    # ---------- scan ingestion rate ----------
+    # Only accept a scan if BOTH conditions are met:
+    #   - at least 0.5 sim-seconds since last accepted scan
+    #   - robot has moved >= 0.25 m  OR  rotated >= 0.15 rad
+    # This prevents micro-corrections on every tiny movement, which
+    # is the main source of "jank" visible in the map fixed frame.
+    minimum_time_interval: 0.50
+    minimum_travel_distance: 0.25
+    minimum_travel_heading: 0.15
+
+    # ---------- TF / map publishing ----------
+    # Publish the map→odom TF at 5 Hz (not 20 Hz) to reduce visible
+    # frame-rate jitter when the map is the fixed reference frame.
+    transform_publish_period: 0.20
+    # Republish /map topic every 4 wall-seconds (not every scan).
+    map_update_interval: 4.0
+
+    # ---------- timing / TF ----------
+    transform_timeout: 0.5
+    tf_buffer_duration: 30.0
+
+    # ---------- scan matching ----------
+    use_scan_matching: true
+    use_scan_barycenter: true
+    use_imu: false
+    interactive_mode: false
+
+    # ---------- loop closure ----------
+    # Disable loop closure in small house environments.
+    # Loop closure triggers sudden pose corrections that look like the
+    # whole room jumping.  For room-scale mapping it adds more jank
+    # than it removes.  Re-enable for large buildings.
+    do_loop_closing: false
+
+    # ---------- solver ----------
+    solver_plugin: solver_plugins::CeresSolver
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY
+    ceres_preconditioner: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT

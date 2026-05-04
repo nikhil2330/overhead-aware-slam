@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <world name="house3">
+
+    <gravity>0 0 -9.8</gravity>
+
+    <scene>
+      <ambient>0.42 0.42 0.40 1</ambient>
+      <background>0.72 0.78 0.82 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <light name="sun_key" type="directional">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 7 0 0 0</pose>
+      <diffuse>0.82 0.84 0.86 1</diffuse>
+      <specular>0.18 0.18 0.18 1</specular>
+      <direction>-0.45 0.28 -0.84</direction>
+    </light>
+
+    <light name="foyer_light" type="point">
+      <cast_shadows>false</cast_shadows>
+      <pose>0.0 -3.15 2.35 0 0 0</pose>
+      <diffuse>1.0 0.90 0.74 1</diffuse>
+      <specular>0.18 0.16 0.13 1</specular>
+      <attenuation>
+        <range>5.2</range>
+        <constant>0.55</constant>
+        <linear>0.055</linear>
+        <quadratic>0.014</quadratic>
+      </attenuation>
+    </light>
+
+    <light name="living_light" type="point">
+      <cast_shadows>true</cast_shadows>
+      <pose>3.75 -2.20 2.45 0 0 0</pose>
+      <diffuse>0.98 0.92 0.80 1</diffuse>
+      <specular>0.22 0.20 0.16 1</specular>
+      <attenuation>
+        <range>7.4</range>
+        <constant>0.50</constant>
+        <linear>0.045</linear>
+        <quadratic>0.010</quadratic>
+      </attenuation>
+    </light>
+
+    <light name="kitchen_dining_light" type="point">
+      <cast_shadows>true</cast_shadows>
+      <pose>-3.50 2.45 2.45 0 0 0</pose>
+      <diffuse>1.0 0.95 0.84 1</diffuse>
+      <specular>0.22 0.20 0.16 1</specular>
+      <attenuation>
+        <range>7.0</range>
+        <constant>0.50</constant>
+        <linear>0.046</linear>
+        <quadratic>0.010</quadratic>
+      </attenuation>
+    </light>
+
+    <light name="bedroom_light" type="point">
+      <cast_shadows>true</cast_shadows>
+      <pose>-4.10 -2.75 2.35 0 0 0</pose>
+      <diffuse>1.0 0.82 0.62 1</diffuse>
+      <specular>0.20 0.16 0.12 1</specular>
+      <attenuation>
+        <range>5.8</range>
+        <constant>0.56</constant>
+        <linear>0.05</linear>
+        <quadratic>0.012</quadratic>
+      </attenuation>
+    </light>
+
+    <light name="central_hall_light" type="point">
+      <cast_shadows>false</cast_shadows>
+      <pose>0.55 -0.25 2.35 0 0 0</pose>
+      <diffuse>0.98 0.90 0.78 1</diffuse>
+      <specular>0.20 0.18 0.14 1</specular>
+      <attenuation>
+        <range>4.8</range>
+        <constant>0.58</constant>
+        <linear>0.05</linear>
+        <quadratic>0.012</quadratic>
+      </attenuation>
+    </light>
+
+    <include>
+      <uri>model://house3_shell</uri>
+      <name>l_shaped_house3_shell</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <!-- Foyer: robot spawns at (0, -3.10), so furniture stays outside that path. -->
+    <include>
+      <uri>model://plant</uri>
+      <name>foyer_planter</name>
+      <pose>-0.92 -3.70 0 0 0 0</pose>
+    </include>
+
+    <!-- Living room in the long right-hand leg of the L. -->
+    <include>
+      <uri>model://rug</uri>
+      <name>living_rug</name>
+      <pose>3.55 -2.55 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://sofa</uri>
+      <name>living_sofa</name>
+      <pose>4.82 -2.32 0 0 0 4.71239</pose>
+    </include>
+    <include>
+      <uri>model://coffee_table</uri>
+      <name>living_coffee_table</name>
+      <pose>3.48 -2.48 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://accent_chair</uri>
+      <name>living_reading_chair</name>
+      <pose>2.28 -1.30 0 0 0 5.55</pose>
+    </include>
+    <include>
+      <uri>model://bookshelf</uri>
+      <name>living_bookcase</name>
+      <pose>4.65 0.26 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://floor_lamp</uri>
+      <name>living_floor_lamp</name>
+      <pose>4.15 -0.82 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://plant</uri>
+      <name>living_corner_plant</name>
+      <pose>2.12 -3.74 0 0 0 0</pose>
+    </include>
+
+    <!-- Kitchen and dining in the north leg. -->
+    <include>
+      <uri>model://table</uri>
+      <name>dining_table</name>
+      <pose>-3.20 1.60 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://Dining Chair</uri>
+      <name>dining_chair_north</name>
+      <pose>-3.20 2.50 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://Dining Chair</uri>
+      <name>dining_chair_south</name>
+      <pose>-3.20 0.70 0 0 0 3.14159</pose>
+    </include>
+    <include>
+      <uri>model://Dining Chair</uri>
+      <name>dining_chair_west</name>
+      <pose>-4.48 1.60 0 0 0 1.5708</pose>
+    </include>
+    <include>
+      <uri>model://Dining Chair</uri>
+      <name>dining_chair_east</name>
+      <pose>-1.92 1.60 0 0 0 4.71239</pose>
+    </include>
+    <include>
+      <uri>model://kitchen_counter</uri>
+      <name>kitchen_counter_north</name>
+      <pose>-3.45 3.75 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://kitchen_counter</uri>
+      <name>kitchen_counter_west</name>
+      <pose>-5.15 2.05 0 0 0 1.5708</pose>
+    </include>
+    <include>
+      <uri>model://fridge</uri>
+      <name>kitchen_fridge</name>
+      <pose>-1.35 3.52 0 0 0 4.71239</pose>
+    </include>
+    <include>
+      <uri>model://plant</uri>
+      <name>kitchen_plant</name>
+      <pose>-5.18 3.62 0 0 0 0</pose>
+    </include>
+
+    <!-- Bedroom in the left front wing. -->
+    <include>
+      <uri>model://rug</uri>
+      <name>bedroom_rug</name>
+      <pose>-4.18 -2.72 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://bed</uri>
+      <name>bedroom_bed</name>
+      <pose>-4.43 -2.65 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://nightstand</uri>
+      <name>bedroom_nightstand_north</name>
+      <pose>-4.98 -1.60 0 0 0 4.71239</pose>
+    </include>
+    <include>
+      <uri>model://nightstand</uri>
+      <name>bedroom_nightstand_south</name>
+      <pose>-4.98 -3.70 0 0 0 1.5708</pose>
+    </include>
+    <include>
+      <uri>model://dresser</uri>
+      <name>bedroom_dresser</name>
+      <pose>-1.65 -3.48 0 0 0 1.5708</pose>
+    </include>
+    <!-- Office nook in the central interior zone. -->
+    <include>
+      <uri>model://desk</uri>
+      <name>office_desk</name>
+      <pose>0.75 0.22 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://chair</uri>
+      <name>office_chair</name>
+      <pose>0.94 -0.52 0 0 0 1.5708</pose>
+    </include>
+
+    <include>
+      <uri>model://round_table</uri>
+      <name>office_meeting_table</name>
+      <pose>-0.95 -1.00 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://office_chair</uri>
+      <name>office_meeting_chair_west</name>
+      <pose>-1.95 -1.00 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://office_chair</uri>
+      <name>office_meeting_chair_south</name>
+      <pose>-0.95 -2.00 0 0 0 1.5708</pose>
+    </include>
+
+  </world>
+</sdf>

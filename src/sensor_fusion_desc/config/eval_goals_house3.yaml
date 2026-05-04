@@ -1,0 +1,45 @@
+goals:
+- x: 5.21
+  y: -0.437
+  yaw: -174.8
+  label: wp_01
+- x: 3.411
+  y: -3.213
+  yaw: -83.8
+  label: wp_02
+- x: 3.462
+  y: -1.62
+  yaw: 173.1
+  label: wp_03
+- x: 1.611
+  y: -0.814
+  yaw: -144.2
+  label: wp_04
+- x: -4.098
+  y: 2.683
+  yaw: 163.2
+  label: wp_05
+- x: -1.698
+  y: -1.569
+  yaw: -93.0
+  label: wp_06
+- x: -2.178
+  y: 0.42
+  yaw: 18.4
+  label: wp_07
+- x: 0.806
+  y: -1.226
+  yaw: -51.2
+  label: wp_08
+- x: -2.726
+  y: -2.666
+  yaw: 130.6
+  label: wp_09
+- x: -4.184
+  y: 2.323
+  yaw: 92.2
+  label: wp_10
+trials: 3
+collision_range_m: 0.2
+goal_timeout_s: 120.0
+stuck_timeout_s: 12.0

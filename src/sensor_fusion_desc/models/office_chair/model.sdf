@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="office_chair">
+    <static>true</static>
+    <link name="body">
+      <!-- Primitive collisions tuned to the imported mesh footprint. -->
+      <collision name="seat_collision">
+        <pose>0.015 -0.002 0.455 0 0 0</pose>
+        <geometry><box><size>0.42 0.47 0.075</size></box></geometry>
+      </collision>
+      <collision name="seat_pan_collision">
+        <pose>0.015 -0.002 0.42 0 0 0</pose>
+        <geometry><box><size>0.24 0.24 0.04</size></box></geometry>
+      </collision>
+      <collision name="backrest_collision">
+        <pose>-0.23 -0.002 0.82 0 -0.11 0</pose>
+        <geometry><box><size>0.045 0.42 0.74</size></box></geometry>
+      </collision>
+      <collision name="armrest_left_collision">
+        <pose>-0.035 0.225 0.725 0 -0.05 0</pose>
+        <geometry><box><size>0.30 0.055 0.03</size></box></geometry>
+      </collision>
+      <collision name="armrest_right_collision">
+        <pose>-0.035 -0.225 0.725 0 -0.05 0</pose>
+        <geometry><box><size>0.30 0.055 0.03</size></box></geometry>
+      </collision>
+      <collision name="armrest_left_support_collision">
+        <pose>-0.03 0.205 0.595 0 0.28 0</pose>
+        <geometry><box><size>0.04 0.06 0.33</size></box></geometry>
+      </collision>
+      <collision name="armrest_right_support_collision">
+        <pose>-0.03 -0.205 0.595 0 0.28 0</pose>
+        <geometry><box><size>0.04 0.06 0.33</size></box></geometry>
+      </collision>
+      <collision name="column_collision">
+        <pose>-0.03 -0.002 0.215 0 0 0</pose>
+        <geometry><cylinder><radius>0.022</radius><length>0.39</length></cylinder></geometry>
+      </collision>
+      <collision name="spoke_front_collision">
+        <pose>0.125 -0.002 0.08 0 0.055 0</pose>
+        <geometry><box><size>0.31 0.036 0.03</size></box></geometry>
+      </collision>
+      <collision name="spoke_back_left_collision">
+        <pose>-0.151 0.086 0.08 0 0.055 2.51327</pose>
+        <geometry><box><size>0.30 0.036 0.03</size></box></geometry>
+      </collision>
+      <collision name="spoke_back_right_collision">
+        <pose>-0.151 -0.09 0.08 0 0.055 -2.51327</pose>
+        <geometry><box><size>0.30 0.036 0.03</size></box></geometry>
+      </collision>
+      <collision name="spoke_front_left_collision">
+        <pose>0.016 0.141 0.08 0 0.055 1.25664</pose>
+        <geometry><box><size>0.30 0.036 0.03</size></box></geometry>
+      </collision>
+      <collision name="spoke_front_right_collision">
+        <pose>0.016 -0.145 0.08 0 0.055 -1.25664</pose>
+        <geometry><box><size>0.30 0.036 0.03</size></box></geometry>
+      </collision>
+      <collision name="caster_front_collision">
+        <pose>0.28 -0.002 0.03 0 0 0</pose>
+        <geometry><box><size>0.075 0.045 0.055</size></box></geometry>
+      </collision>
+      <collision name="caster_back_left_collision">
+        <pose>-0.273 0.174 0.03 0 0 0</pose>
+        <geometry><box><size>0.075 0.045 0.055</size></box></geometry>
+      </collision>
+      <collision name="caster_back_right_collision">
+        <pose>-0.273 -0.178 0.03 0 0 0</pose>
+        <geometry><box><size>0.075 0.045 0.055</size></box></geometry>
+      </collision>
+      <collision name="caster_front_left_collision">
+        <pose>0.063 0.283 0.03 0 0 0</pose>
+        <geometry><box><size>0.045 0.075 0.055</size></box></geometry>
+      </collision>
+      <collision name="caster_front_right_collision">
+        <pose>0.063 -0.287 0.03 0 0 0</pose>
+        <geometry><box><size>0.045 0.075 0.055</size></box></geometry>
+      </collision>
+
+      <visual name="chair_visual">
+        <pose>0.106 -0.002 -0.002 0 0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://OfficeChairGrey/meshes/OfficeChairGrey.obj</uri>
+            <scale>1.04 1.04 1.04</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
